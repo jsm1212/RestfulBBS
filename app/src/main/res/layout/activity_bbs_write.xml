@@ -58,7 +58,7 @@
     <EditText
             android:id="@+id/editContent"
             android:textSize="20dp"
-            android:layout_width="300dp" android:layout_height="75dp"
+            android:layout_width="300dp" android:layout_height="300dp"
 
             android:lines="5" android:gravity="top|left" android:inputType="textMultiLine"
 
@@ -69,14 +69,14 @@
             android:maxWidth="5.0dip" tools:ignore="MissingConstraints"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.806" app:layout_constraintVertical_bias="0.457"/>
+            app:layout_constraintHorizontal_bias="0.806" app:layout_constraintVertical_bias="0.613"/>
     <Button
             android:text="작성"
             android:textSize="30dp"
             android:gravity="center"
             android:layout_width="210dp"
-            android:layout_height="95dp" android:id="@+id/button2"
+            android:layout_height="95dp" android:id="@+id/writeBtn"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.801"/>
+            app:layout_constraintVertical_bias="0.872"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         loginBtn.setOnClickListener {
             val id = editId.text.toString()
             val pwd = editPwd.text.toString()
-            
+
             val dto = MemberDao.getInstance().login(MemberDto(id,pwd,"","",3))
             if(dto != null){
                 MemberDao.user = dto

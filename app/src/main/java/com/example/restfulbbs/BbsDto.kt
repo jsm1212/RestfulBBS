@@ -3,7 +3,7 @@ package com.example.restfulbbs
 import android.os.Parcel
 import android.os.Parcelable
 
-data class BbsDto(var seq:Int, var id:String?, var ref:Int, var step:Int, var depth:Int, var title:String?, var content:String?, var wdate:String?, var del:Int, var readcount:Int): Parcelable {
+data class BbsDto(val seq:Int, val id:String?, val ref:Int, val step:Int, val depth:Int, val title:String?, val content:String?, val wdate:String?, val del:Int, val readcount:Int): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString(),
