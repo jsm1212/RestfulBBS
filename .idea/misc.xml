@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidSamples/RestfulBBS/app/src/main/res/layout/activity_bbs.xml" value="0.22" />
+        <entry key="..\:/AndroidSamples/RestfulBBS/app/src/main/res/layout/activity_bbs_detail.xml" value="0.25" />
         <entry key="..\:/AndroidSamples/RestfulBBS/app/src/main/res/layout/activity_bbs_write.xml" value="0.25" />
         <entry key="..\:/AndroidSamples/RestfulBBS/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidSamples/RestfulBBS/app/src/main/res/layout/activity_regi.xml" value="0.33" />
         <entry key="..\:/AndroidSamples/RestfulBBS/app/src/main/res/layout/view_item_layout.xml" value="0.25" />
       </map>
     </option>

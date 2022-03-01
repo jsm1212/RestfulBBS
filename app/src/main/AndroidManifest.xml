@@ -14,6 +14,12 @@
             android:theme="@style/Theme.RestfulBBS"
             android:usesCleartextTraffic="true">
         <activity
+                android:name=".RegiActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".BbsDetailActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".BbsWriteActivity"
                 android:exported="true"/>
         <activity

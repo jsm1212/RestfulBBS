@@ -11,6 +11,12 @@ interface MemberService{
     @POST("/login")
     fun login(@Body dto:MemberDto): Call<MemberDto>
 
+    @POST("/addMember")
+    fun addMember(@Body dto:MemberDto): Call<String>
+
+    @POST("/getId")
+    fun getId(@Body dto:MemberDto): Call<String>
+
 }
 class MemberDao {
 
@@ -43,5 +49,35 @@ class MemberDao {
         if(response == null) return null
 
         return response?.body() as MemberDto
+    }
+
+    fun addMember(dto: MemberDto): String?{
+        var response: Response<String>?= null
+        try {
+            val retrofit = RetrofitClient.getInstance()
+
+            val service = retrofit?.create(MemberService::class.java)
+
+            val call = service?.addMember(dto)
+
+            response = call?.execute()
+        }catch(e:Exception){
+            response = null
+        }
+        if(response == null) return null
+
+        return response?.body() as String
+    }
+
+    fun getId(dto: MemberDto): String?{
+        val retrofit = RetrofitClient.getInstance()
+
+        val service = retrofit?.create(MemberService::class.java)
+
+        val call = service?.getId(dto)
+
+        val response = call?.execute()
+
+        return response?.body() as String
     }
 }

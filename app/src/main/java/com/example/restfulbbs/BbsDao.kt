@@ -5,6 +5,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface BbsService {
 
@@ -13,6 +14,12 @@ interface BbsService {
 
     @POST("/writeBbs")
     fun writeBbs(@Body dto: BbsDto): Call<String>
+
+    @GET("/bbsdetail")
+    fun bbsdetail(@Query("seq") seq:Int): Call<BbsDto>
+
+    @GET("/getBbs")
+    fun getBbs(@Query("seq") seq:Int): Call<BbsDto>
 }
 
 class BbsDao {
@@ -59,5 +66,30 @@ class BbsDao {
         if(response == null) return null
 
         return response?.body() as String
+    }
+
+
+    fun getBbs(seq: Int): BbsDto{
+        val retrofit = RetrofitClient.getInstance()
+
+        val service = retrofit?.create(BbsService::class.java)
+
+        val call = service?.getBbs(seq)
+
+        val response = call?.execute()
+
+        return response?.body() as BbsDto
+    }
+
+    fun bbsdetail(seq: Int): BbsDto{
+        val retrofit = RetrofitClient.getInstance()
+
+        val service = retrofit?.create(BbsService::class.java)
+
+        val call = service?.bbsdetail(seq)
+
+        val response = call?.execute()
+
+        return response?.body() as BbsDto
     }
 }

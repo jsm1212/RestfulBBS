@@ -5,63 +5,67 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".BbsDetailActivity">
+
     <TextView
-            android:text="ID"
+            android:text="작성자"
             android:textSize="30dp"
             android:gravity="center"
-            android:layout_width="115dp"
-            android:layout_height="75dp" android:id="@+id/textView"
+            android:layout_width="102dp"
+            android:layout_height="49dp" android:id="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.234" app:layout_constraintVertical_bias="0.389"/>
+            app:layout_constraintHorizontal_bias="0.174" app:layout_constraintVertical_bias="0.14"/>
     <TextView
-            android:text="PWD"
+            android:text="제목"
             android:textSize="30dp"
             android:gravity="center"
-            android:layout_width="115dp"
-            android:layout_height="75dp" android:id="@+id/textView3"
+            android:layout_width="102dp"
+            android:layout_height="49dp" android:id="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.234" app:layout_constraintVertical_bias="0.496"/>
+            app:layout_constraintHorizontal_bias="0.174" app:layout_constraintVertical_bias="0.228"/>
+    <TextView
+            android:text="내용"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_width="102dp"
+            android:layout_height="49dp" android:id="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.174" app:layout_constraintVertical_bias="0.318"/>
     <EditText
-            android:id="@+id/editId"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:layout_width="250dp"
-            android:layout_height="65dp"
-            android:inputType="textPersonName"
-            android:ems="10"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.747" app:layout_constraintVertical_bias="0.393"/>
-    <EditText
-            android:id="@+id/editPwd"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:layout_width="250dp"
-            android:layout_height="65dp"
-            android:inputType="textPersonName"
-            android:ems="10"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.747"/>
-    <Button
-            android:text="로그인"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:layout_width="170dp"
-            android:layout_height="110dp" android:id="@+id/loginBtn"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.674" app:layout_constraintHorizontal_bias="0.532"/>
-    <Button
-            android:text="회원가입"
+            android:id="@+id/DetailEditName"
             android:textSize="20dp"
             android:gravity="center"
-            android:layout_width="195dp"
-            android:layout_height="70dp" android:id="@+id/goRegiBtn"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:focusable="false"
+            android:ems="10"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.282" app:layout_constraintVertical_bias="0.816"/>
+            app:layout_constraintHorizontal_bias="0.737" app:layout_constraintVertical_bias="0.14"/>
+    <EditText
+            android:id="@+id/DetailEditTitle"
+            android:inputType="textPersonName"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:focusable="false"
+            android:ems="10"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.738" app:layout_constraintVertical_bias="0.227"/>
+    <EditText
+            android:id="@+id/DetailEditContent"
+            android:textSize="20dp"
+            android:layout_width="423dp"
+            android:layout_height="379dp"
+            android:focusable="false"
+            android:gravity="start|top"
+            android:ems="10"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.502" app:layout_constraintVertical_bias="0.69"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

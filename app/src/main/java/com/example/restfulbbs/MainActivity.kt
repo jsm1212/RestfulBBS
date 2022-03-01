@@ -35,5 +35,12 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+
+        val regiBtn = findViewById<Button>(R.id.goRegiBtn)
+
+        regiBtn.setOnClickListener {
+            val i = Intent(this, RegiActivity::class.java)
+            startActivity(i)
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.example.restfulbbs
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +22,22 @@ class CustomAdapter(val context: Context, val bbsList:ArrayList<BbsDto>) : Recyc
             bbsTitle.text = dataVo.title
             bbsId.text = "작성자: " + dataVo.id
             bbsReadcount.text = "조회수 :" + dataVo.readcount.toString()
+
+            itemView.setOnClickListener{
+
+                val getBbs = BbsDao.getInstance().getBbs(dataVo.seq)
+                println("~~~dto:${getBbs.title}")
+                val bbsdetail = BbsDao.getInstance().bbsdetail(dataVo.seq)
+                println("~~~readcount:${bbsdetail.readcount}")
+
+                Intent(context, BbsDetailActivity::class.java).apply {
+
+                    putExtra("data", getBbs)
+
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }.run { context.startActivity(this) }
+
+            }
         }
     }
 
