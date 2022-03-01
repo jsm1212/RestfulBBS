@@ -15,10 +15,10 @@ class BbsWriteActivity : AppCompatActivity() {
 
 
         val writeBtn = findViewById<Button>(R.id.writeBtn)
+        val id = findViewById<TextView>(R.id.textId)
+        id.text = MemberDao.user?.id
 
         writeBtn.setOnClickListener {
-            val id = findViewById<TextView>(R.id.textId)
-            id.text = MemberDao.user?.id
 
             val title = findViewById<EditText>(R.id.editTitle)
             val content = findViewById<EditText>(R.id.editContent)
