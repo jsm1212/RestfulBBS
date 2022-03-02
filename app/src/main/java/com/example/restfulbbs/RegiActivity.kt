@@ -34,6 +34,21 @@ class RegiActivity : AppCompatActivity() {
             }
         }
 
+        val duplText2 = findViewById<TextView>(R.id.duplText2)
+        val duplBtn2 = findViewById<Button>(R.id.duplBtn2)
+
+        duplBtn2.setOnClickListener {
+            val email = editEmail.text.toString()
+
+            val msg2 = MemberDao.getInstance().checkEmail(MemberDto("","","",email,3))
+            if(msg2 == "NO"){
+                duplText2.text= "이미 사용중인 이메일입니다."
+                editEmail.setText("")
+            }else{
+                duplText2.text="사용 가능한 이메일입니다."
+            }
+        }
+
         val regiBtn = findViewById<Button>(R.id.regiBtn)
 
         regiBtn.setOnClickListener {
@@ -44,6 +59,7 @@ class RegiActivity : AppCompatActivity() {
             val email = editEmail.text.toString()
 
             val msg = MemberDao.getInstance().addMember(MemberDto(id,pwd,name,email,3))
+
             if(msg == "YES" && pwd == pwd2){
                 Toast.makeText(this, "가입이 완료되었습니다.", Toast.LENGTH_LONG).show()
 

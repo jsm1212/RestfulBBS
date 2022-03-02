@@ -17,6 +17,9 @@ interface MemberService{
     @POST("/getId")
     fun getId(@Body dto:MemberDto): Call<String>
 
+    @POST("/checkEmail")
+    fun checkEmail(@Body dto:MemberDto): Call<String>
+
 }
 class MemberDao {
 
@@ -75,6 +78,18 @@ class MemberDao {
         val service = retrofit?.create(MemberService::class.java)
 
         val call = service?.getId(dto)
+
+        val response = call?.execute()
+
+        return response?.body() as String
+    }
+
+    fun checkEmail(dto: MemberDto): String?{
+        val retrofit = RetrofitClient.getInstance()
+
+        val service = retrofit?.create(MemberService::class.java)
+
+        val call = service?.checkEmail(dto)
 
         val response = call?.execute()
 

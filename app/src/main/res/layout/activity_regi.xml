@@ -80,13 +80,13 @@
             android:id="@+id/regiEditEmail"
             android:textSize="25dp"
             android:gravity="center"
-            android:layout_width="290dp"
-            android:layout_height="70dp"
+            android:layout_width="254dp"
+            android:layout_height="68dp"
             android:inputType="textPersonName"
             android:ems="10"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.79" app:layout_constraintVertical_bias="0.712"/>
+            app:layout_constraintHorizontal_bias="0.708" app:layout_constraintVertical_bias="0.715"/>
     <EditText
             android:id="@+id/regiEditName"
             android:textSize="25dp"
@@ -125,7 +125,7 @@
             android:layout_height="60dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.823" app:layout_constraintHorizontal_bias="0.487"/>
+            app:layout_constraintVertical_bias="0.892" app:layout_constraintHorizontal_bias="0.507"/>
     <Button
             android:text="중복확인"
             android:textSize="15dp"
@@ -135,6 +135,15 @@
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_bias="0.918" app:layout_constraintVertical_bias="0.259"/>
+    <Button
+            android:text="중복확인"
+            android:textSize="10dp"
+            android:gravity="center"
+            android:layout_width="84dp"
+            android:layout_height="47dp" android:id="@+id/duplBtn2"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.968" app:layout_constraintVertical_bias="0.708"/>
     <TextView
             android:id="@+id/duplText"
             android:gravity="center"
@@ -143,4 +152,12 @@
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_bias="0.612" app:layout_constraintVertical_bias="0.321"/>
+    <TextView
+            android:id="@+id/duplText2"
+            android:gravity="center"
+            android:layout_width="260dp"
+            android:layout_height="29dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.72" app:layout_constraintVertical_bias="0.758"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
