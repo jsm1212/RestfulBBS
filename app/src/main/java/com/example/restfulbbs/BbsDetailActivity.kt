@@ -3,6 +3,8 @@ package com.example.restfulbbs
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class BbsDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +21,15 @@ class BbsDetailActivity : AppCompatActivity() {
         title.setText(data?.title)
         content.setText(data?.content)
 
+        var recyclerView = findViewById<RecyclerView>(R.id.reply_recyclerView)
 
+        val commentlist = CommentDao.getInstance().getCommentList(BbsDao.seq!!)
 
+        val mAdapter2 = CustomAdapter2(this, commentlist)
+        recyclerView.adapter = mAdapter2
+
+        val layout = LinearLayoutManager(this)
+        recyclerView.layoutManager = layout
+        recyclerView.setHasFixedSize(true)
     }
 }

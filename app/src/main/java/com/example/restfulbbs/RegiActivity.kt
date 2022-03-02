@@ -23,7 +23,7 @@ class RegiActivity : AppCompatActivity() {
         val duplBtn = findViewById<Button>(R.id.duplBtn)
 
         duplBtn.setOnClickListener {
-            val id = editId.text.toString()
+            val id = editId.text.toString().trim()
 
             val msg = MemberDao.getInstance().getId(MemberDto(id,"","","",3))
             if(msg == "NO"){
@@ -38,7 +38,7 @@ class RegiActivity : AppCompatActivity() {
         val duplBtn2 = findViewById<Button>(R.id.duplBtn2)
 
         duplBtn2.setOnClickListener {
-            val email = editEmail.text.toString()
+            val email = editEmail.text.toString().trim()
 
             val msg2 = MemberDao.getInstance().checkEmail(MemberDto("","","",email,3))
             if(msg2 == "NO"){
@@ -52,11 +52,11 @@ class RegiActivity : AppCompatActivity() {
         val regiBtn = findViewById<Button>(R.id.regiBtn)
 
         regiBtn.setOnClickListener {
-            val id = editId.text.toString()
-            val pwd = editPwd.text.toString()
-            val pwd2 = editPwd2.text.toString()
-            val name = editName.text.toString()
-            val email = editEmail.text.toString()
+            val id = editId.text.toString().trim()
+            val pwd = editPwd.text.toString().trim()
+            val pwd2 = editPwd2.text.toString().trim()
+            val name = editName.text.toString().trim()
+            val email = editEmail.text.toString().trim()
 
             val msg = MemberDao.getInstance().addMember(MemberDto(id,pwd,name,email,3))
 

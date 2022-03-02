@@ -26,7 +26,7 @@ class BbsDao {
 
     companion object{
         var bbsDao:BbsDao? = null
-        var dto:String? = null
+        var seq:Int? = null
 
         fun getInstance(): BbsDao{
             if(bbsDao == null){

@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         val loginBtn = findViewById<Button>(R.id.loginBtn)
 
         loginBtn.setOnClickListener {
-            val id = editId.text.toString()
-            val pwd = editPwd.text.toString()
+            val id = editId.text.toString().trim()
+            val pwd = editPwd.text.toString().trim()
 
             val dto = MemberDao.getInstance().login(MemberDto(id,pwd,"","",3))
             if(dto != null){

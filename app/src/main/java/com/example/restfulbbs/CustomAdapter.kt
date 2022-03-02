@@ -24,7 +24,7 @@ class CustomAdapter(val context: Context, val bbsList:ArrayList<BbsDto>) : Recyc
             bbsReadcount.text = "조회수 :" + dataVo.readcount.toString()
 
             itemView.setOnClickListener{
-
+                BbsDao.seq = bbsNum.text.toString().toInt()
                 val getBbs = BbsDao.getInstance().getBbs(dataVo.seq)
                 println("~~~dto:${getBbs.title}")
                 val bbsdetail = BbsDao.getInstance().bbsdetail(dataVo.seq)

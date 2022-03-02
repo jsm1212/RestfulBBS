@@ -25,7 +25,6 @@ class BbsWriteActivity : AppCompatActivity() {
 
             var dto = BbsDao.getInstance().writeBbs(BbsDto(0,MemberDao.user?.id,0,0,0,title.text.toString(),content.text.toString(),"",0,0))
             if(dto != null){
-                BbsDao.dto = dto
 
                 Toast.makeText(this, "추가되었습니다", Toast.LENGTH_LONG).show()
 

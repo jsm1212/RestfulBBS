@@ -1,9 +1,9 @@
 package com.example.restfulbbs
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -23,10 +23,13 @@ class BbsActivity : AppCompatActivity() {
         recyclerView.layoutManager = layout
         recyclerView.setHasFixedSize(true)
 
+
         val insertBtn = findViewById<Button>(R.id.insertBtn)
         insertBtn.setOnClickListener {
             val i = Intent(this, BbsWriteActivity::class.java)
             startActivity(i)
         }
+
+
     }
 }
