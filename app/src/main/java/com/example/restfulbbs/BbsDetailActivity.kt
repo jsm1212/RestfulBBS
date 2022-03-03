@@ -1,7 +1,9 @@
 package com.example.restfulbbs
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,5 +33,12 @@ class BbsDetailActivity : AppCompatActivity() {
         val layout = LinearLayoutManager(this)
         recyclerView.layoutManager = layout
         recyclerView.setHasFixedSize(true)
+
+        val replyBtn = findViewById<Button>(R.id.replyBtn)
+
+        replyBtn.setOnClickListener {
+            val i = Intent(this, CommentActivity::class.java)
+            startActivity(i)
+        }
     }
 }
