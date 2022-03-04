@@ -20,6 +20,12 @@ interface BbsService {
 
     @GET("/getBbs")
     fun getBbs(@Query("seq") seq:Int): Call<BbsDto>
+
+    @POST("/updateBbs")
+    fun updateBbs(@Body dto: BbsDto): Call<String>
+
+    @GET("/deleteBbs")
+    fun deleteBbs(@Query("seq") seq:Int): Call<String>
 }
 
 class BbsDao {
@@ -91,5 +97,29 @@ class BbsDao {
         val response = call?.execute()
 
         return response?.body() as BbsDto
+    }
+
+    fun updateBbs(dto: BbsDto): String{
+        val retrofit = RetrofitClient.getInstance()
+
+        val service = retrofit?.create(BbsService::class.java)
+
+        val call = service?.updateBbs(dto)
+
+        val response = call?.execute()
+
+        return response?.body() as String
+    }
+
+    fun deleteBbs(seq: Int): String{
+        val retrofit = RetrofitClient.getInstance()
+
+        val service = retrofit?.create(BbsService::class.java)
+
+        val call = service?.deleteBbs(seq)
+
+        val response = call?.execute()
+
+        return response?.body() as String
     }
 }

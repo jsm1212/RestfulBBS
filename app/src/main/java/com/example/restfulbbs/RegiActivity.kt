@@ -25,7 +25,7 @@ class RegiActivity : AppCompatActivity() {
         duplBtn.setOnClickListener {
             val id = editId.text.toString().trim()
 
-            val msg = MemberDao.getInstance().getId(MemberDto(id,"","","",3))
+            val msg = MemberDao.getInstance().getId_M(MemberDto(id,"","","",3))
             if(msg == "NO"){
                 duplText.text= "이미 사용중인 아이디입니다."
                 editId.setText("")
@@ -58,7 +58,7 @@ class RegiActivity : AppCompatActivity() {
             val name = editName.text.toString().trim()
             val email = editEmail.text.toString().trim()
 
-            val msg = MemberDao.getInstance().addMember(MemberDto(id,pwd,name,email,3))
+            val msg = MemberDao.getInstance().addMember_M(MemberDto(id,pwd,name,email,3))
 
             if(msg == "YES" && pwd == pwd2){
                 Toast.makeText(this, "가입이 완료되었습니다.", Toast.LENGTH_LONG).show()

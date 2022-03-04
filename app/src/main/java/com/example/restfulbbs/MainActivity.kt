@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             val id = editId.text.toString().trim()
             val pwd = editPwd.text.toString().trim()
 
-            val dto = MemberDao.getInstance().login(MemberDto(id,pwd,"","",3))
+            val dto = MemberDao.getInstance().login_M(MemberDto(id,pwd,"","",3))
             if(dto != null){
                 MemberDao.user = dto
 

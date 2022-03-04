@@ -40,5 +40,9 @@ class BbsDetailActivity : AppCompatActivity() {
             val i = Intent(this, CommentActivity::class.java)
             startActivity(i)
         }
+
+        if( id.text.toString() == MemberDao.user?.id ){
+
+        }
     }
 }

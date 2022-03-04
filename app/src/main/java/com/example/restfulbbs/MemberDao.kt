@@ -8,14 +8,14 @@ import retrofit2.http.POST
 
 interface MemberService{
 
-    @POST("/login")
-    fun login(@Body dto:MemberDto): Call<MemberDto>
+    @POST("/login_M")
+    fun login_M(@Body dto:MemberDto): Call<MemberDto>
 
-    @POST("/addMember")
-    fun addMember(@Body dto:MemberDto): Call<String>
+    @POST("/addMember_M")
+    fun addMember_M(@Body dto:MemberDto): Call<String>
 
-    @POST("/getId")
-    fun getId(@Body dto:MemberDto): Call<String>
+    @POST("/getId_M")
+    fun getId_M(@Body dto:MemberDto): Call<String>
 
     @POST("/checkEmail")
     fun checkEmail(@Body dto:MemberDto): Call<String>
@@ -35,7 +35,7 @@ class MemberDao {
         }
     }
 
-    fun login(dto: MemberDto): MemberDto? {
+    fun login_M(dto: MemberDto): MemberDto? {
 
         var response: Response<MemberDto>? = null
         try {
@@ -43,7 +43,7 @@ class MemberDao {
 
             val service = retrofit?.create(MemberService::class.java)
 
-            val call = service?.login(dto)
+            val call = service?.login_M(dto)
 
             response = call?.execute()
         }catch (e:Exception){
@@ -54,14 +54,14 @@ class MemberDao {
         return response?.body() as MemberDto
     }
 
-    fun addMember(dto: MemberDto): String?{
+    fun addMember_M(dto: MemberDto): String?{
         var response: Response<String>?= null
         try {
             val retrofit = RetrofitClient.getInstance()
 
             val service = retrofit?.create(MemberService::class.java)
 
-            val call = service?.addMember(dto)
+            val call = service?.addMember_M(dto)
 
             response = call?.execute()
         }catch(e:Exception){
@@ -72,12 +72,12 @@ class MemberDao {
         return response?.body() as String
     }
 
-    fun getId(dto: MemberDto): String?{
+    fun getId_M(dto: MemberDto): String?{
         val retrofit = RetrofitClient.getInstance()
 
         val service = retrofit?.create(MemberService::class.java)
 
-        val call = service?.getId(dto)
+        val call = service?.getId_M(dto)
 
         val response = call?.execute()
 
