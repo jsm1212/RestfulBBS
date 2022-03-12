@@ -12,8 +12,8 @@ interface BbsService {
     @GET("/getBbsList")
     fun getBbsList(): Call<List<BbsDto>>
 
-    @POST("/writeBbs")
-    fun writeBbs(@Body dto: BbsDto): Call<String>
+    @POST("/writeBbs_M")
+    fun writeBbs_M(@Body dto: BbsDto): Call<String>
 
     @GET("/bbsdetail")
     fun bbsdetail(@Query("seq") seq:Int): Call<BbsDto>
@@ -54,7 +54,7 @@ class BbsDao {
         return response?.body() as ArrayList<BbsDto>
     }
 
-    fun writeBbs(dto: BbsDto):String?{
+    fun writeBbs_M(dto: BbsDto):String?{
 
         var response: Response<String>? = null
 
@@ -63,7 +63,7 @@ class BbsDao {
 
             val service = retrofit?.create(BbsService::class.java)
 
-            val call = service?.writeBbs(dto)
+            val call = service?.writeBbs_M(dto)
 
             response = call?.execute()
         }catch(e:Exception){

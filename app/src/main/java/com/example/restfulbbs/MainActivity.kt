@@ -122,7 +122,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
         kakao_login_button.setOnClickListener {
             if(UserApiClient.instance.isKakaoTalkLoginAvailable(this)){
                 UserApiClient.instance.loginWithKakaoTalk(this, callback = callback)

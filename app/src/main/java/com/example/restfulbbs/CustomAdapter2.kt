@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class CustomAdapter2(val context: Context, val commentList:ArrayList<CommentDto>) : RecyclerView.Adapter<CustomAdapter2.ItemViewHolder>(){
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -16,9 +19,9 @@ class CustomAdapter2(val context: Context, val commentList:ArrayList<CommentDto>
         val commentWdate = itemView.findViewById<TextView>(R.id.commentWdateText)
 
         fun bind(dataVo:CommentDto, context: Context){
-            commentId.text = dataVo.id
-            commentContent.text = dataVo.content
-            commentWdate.text = dataVo.wdate
+                commentId.text = dataVo.id
+                commentContent.text = dataVo.content
+                commentWdate.text = dataVo.wdate
 
             itemView.setOnClickListener{
 

@@ -9,11 +9,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="574dp"
-            android:layout_height="706dp"
+            android:layout_height="650dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.062"
-            android:id="@+id/comment_recyclerView" app:layout_constraintHorizontal_bias="0.384"/>
+            app:layout_constraintVertical_bias="0.937"
+            android:id="@+id/comment_recyclerView" app:layout_constraintHorizontal_bias="0.615"/>
     <EditText
             android:layout_width="399dp"
             android:layout_height="86dp"
@@ -23,14 +23,14 @@
             android:id="@+id/editCommentContent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.189" app:layout_constraintVertical_bias="0.981"/>
+            app:layout_constraintHorizontal_bias="0.179" app:layout_constraintVertical_bias="0.061"/>
     <Button
             android:text="댓글작성"
             android:layout_width="107dp"
             android:layout_height="64dp" android:id="@+id/commentBtn"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.931" app:layout_constraintVertical_bias="0.966"/>
+            app:layout_constraintHorizontal_bias="0.931" app:layout_constraintVertical_bias="0.07"/>
     <TextView
             android:text="작성자"
             android:textSize="20dp"
@@ -39,5 +39,5 @@
             android:layout_height="38dp" android:id="@+id/commentId"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.075" app:layout_constraintVertical_bias="0.824"/>
+            app:layout_constraintHorizontal_bias="0.031" app:layout_constraintVertical_bias="0.017"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

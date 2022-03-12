@@ -3,6 +3,7 @@ package com.example.restfulbbs
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -23,7 +24,8 @@ class BbsWriteActivity : AppCompatActivity() {
             val title = findViewById<EditText>(R.id.editTitle)
             val content = findViewById<EditText>(R.id.editContent)
 
-            var dto = BbsDao.getInstance().writeBbs(BbsDto(0,MemberDao.user?.id,0,0,0,title.text.toString(),content.text.toString(),"",0,0))
+            var dto = BbsDao.getInstance().writeBbs_M(BbsDto(0,MemberDao.user?.id,0,0,0,title.text.toString(),content.text.toString(),"",0,0))
+            Log.d("~~~~~게시글 등록", dto!!)
             if(dto != null){
 
                 Toast.makeText(this, "추가되었습니다", Toast.LENGTH_LONG).show()

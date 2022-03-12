@@ -18,10 +18,10 @@ class CustomAdapter(val context: Context, val bbsList:ArrayList<BbsDto>) : Recyc
         val bbsReadcount = itemView.findViewById<TextView>(R.id.readcountTxt)
 
         fun bind(dataVo:BbsDto, context: Context){
-            bbsNum.text = dataVo.seq.toString()
-            bbsTitle.text = dataVo.title
-            bbsId.text = "작성자: " + dataVo.id
-            bbsReadcount.text = "조회수 :" + dataVo.readcount.toString()
+
+                bbsTitle.text = dataVo.title
+                bbsId.text = "작성자: " + dataVo.id
+                bbsReadcount.text = "조회수 :" + dataVo.readcount.toString()
 
             itemView.setOnClickListener{
                 BbsDao.seq = bbsNum.text.toString().toInt()

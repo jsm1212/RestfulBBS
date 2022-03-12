@@ -12,8 +12,8 @@ interface CommentService {
     @GET("/getCommentList")
     fun getCommentList(@Query("seq") seq:Int): Call<List<CommentDto>>
 
-    @POST("/insertComment")
-    fun insertComment(@Body dto: CommentDto) : Call<String>
+    @POST("/insertComment_M")
+    fun insertComment_M(@Body dto: CommentDto) : Call<String>
 }
 
 class CommentDao {
@@ -41,7 +41,7 @@ class CommentDao {
         return response?.body() as ArrayList<CommentDto>
     }
 
-    fun insertComment(dto: CommentDto): String?{
+    fun insertComment_M(dto: CommentDto): String?{
         var response: Response<String>? = null
 
         try {
@@ -49,7 +49,7 @@ class CommentDao {
 
             val service = retrofit?.create(CommentService::class.java)
 
-            val call = service?.insertComment(dto)
+            val call = service?.insertComment_M(dto)
 
             response = call?.execute()
         }catch(e:Exception){
