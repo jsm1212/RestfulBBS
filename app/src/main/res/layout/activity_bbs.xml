@@ -6,21 +6,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".BbsActivity">
-
     <Button
             android:text="추가"
             android:textSize="30dp"
             android:gravity="center"
-            android:layout_width="180dp"
-            android:layout_height="90dp" android:id="@+id/insertBtn"
+            android:layout_width="533dp"
+            android:layout_height="77dp" android:id="@+id/insertBtn"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.028"/>
+            app:layout_constraintVertical_bias="0.018"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="600dp"
-            android:layout_height="700dp"
+            android:layout_height="720dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/insertBtn"
-            android:id="@+id/recycler_view" app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintVertical_bias="0.8"/>
+            android:id="@+id/recycler_view" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.76"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

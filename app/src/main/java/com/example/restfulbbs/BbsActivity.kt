@@ -2,6 +2,7 @@ package com.example.restfulbbs
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuInflater
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager

@@ -19,24 +19,33 @@ class CustomAdapter(val context: Context, val bbsList:ArrayList<BbsDto>) : Recyc
 
         fun bind(dataVo:BbsDto, context: Context){
 
+            if(dataVo.del == 0) {
+                bbsNum.text = dataVo.seq.toString()
                 bbsTitle.text = dataVo.title
                 bbsId.text = "작성자: " + dataVo.id
                 bbsReadcount.text = "조회수 :" + dataVo.readcount.toString()
+            }else{
+                bbsNum.text = ""
+                bbsTitle.text = "삭제된 게시글입니다."
+                bbsId.text = ""
+                bbsReadcount.text = ""
+            }
 
             itemView.setOnClickListener{
-                BbsDao.seq = bbsNum.text.toString().toInt()
-                val getBbs = BbsDao.getInstance().getBbs(dataVo.seq)
-                println("~~~dto:${getBbs.title}")
-                val bbsdetail = BbsDao.getInstance().bbsdetail(dataVo.seq)
-                println("~~~readcount:${bbsdetail.readcount}")
+                if(dataVo.del == 0) {
+                    BbsDao.seq = bbsNum.text.toString().toInt()
+                    val getBbs = BbsDao.getInstance().getBbs(dataVo.seq)
+                    println("~~~dto:${getBbs.title}")
+                    val bbsdetail = BbsDao.getInstance().bbsdetail(dataVo.seq)
+                    println("~~~readcount:${bbsdetail.readcount}")
 
-                Intent(context, BbsDetailActivity::class.java).apply {
+                    Intent(context, BbsDetailActivity::class.java).apply {
 
-                    putExtra("data", getBbs)
+                        putExtra("data", getBbs)
 
-                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                }.run { context.startActivity(this) }
-
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }.run { context.startActivity(this) }
+                }
             }
         }
     }
